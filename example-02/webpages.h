@@ -3,6 +3,7 @@ const char index_html[] PROGMEM = R"rawliteral(
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Example2</title>
   <meta charset="UTF-8">
 </head>
 <body>
@@ -121,6 +122,7 @@ const char logout_html[] PROGMEM = R"rawliteral(
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LogOut</title>
   <meta charset="UTF-8">
 </head>
 <body>
@@ -134,6 +136,8 @@ const char reboot_html[] PROGMEM = R"rawliteral(
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reboot</title>
   <meta charset="UTF-8">
 </head>
 <body>

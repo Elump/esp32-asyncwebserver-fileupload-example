@@ -42,6 +42,7 @@ void configureWebServer() {
     request->send_P(401, "text/html", logout_html, processor);
   });
 
+  // main webpage of the webserver
   server->on("/", HTTP_GET, [](AsyncWebServerRequest * request) {
     String logmessage = "Client:" + request->client()->remoteIP().toString() + + " " + request->url();
 
@@ -57,6 +58,7 @@ void configureWebServer() {
 
   });
 
+  // reboot webpage
   server->on("/reboot", HTTP_GET, [](AsyncWebServerRequest * request) {
     String logmessage = "Client:" + request->client()->remoteIP().toString() + " " + request->url();
 
@@ -86,6 +88,7 @@ void configureWebServer() {
     }
   });
 
+  // file actions download or delete file
   server->on("/file", HTTP_GET, [](AsyncWebServerRequest * request) {
     String logmessage = "Client:" + request->client()->remoteIP().toString() + " " + request->url();
     if (checkUserWebAuth(request)) {
@@ -127,6 +130,7 @@ void configureWebServer() {
   });
 }
 
+// if a url is not found, this function is called
 void notFound(AsyncWebServerRequest *request) {
   String logmessage = "Client:" + request->client()->remoteIP().toString() + " " + request->url();
   Serial.println(logmessage);
